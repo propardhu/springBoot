@@ -1,7 +1,8 @@
-package com.pardhu.pardhuspace;
+package com.pardhu.pardhuspace.helloworld;
 
 public class HelloWorldBean {
     private String message;
+
     public HelloWorldBean(String message) {
         this.message = message;
     }
