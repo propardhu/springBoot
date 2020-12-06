@@ -7,34 +7,32 @@ public class User {
     private String name;
     private Date DOB;
 
-    public User(Integer id, String name, Date DOB) {
-        this.id = id;
-        this.name = name;
-        this.DOB = DOB;
-    }
+    public static class Builder {
+        private Integer id;
+        private String name;
+        private Date DOB;
 
-    public Integer getId() {
-        return id;
-    }
+        public Builder(Integer id) {
+            this.id = id;
+        }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+        public Builder WithName(String name) {
+            this.name = name;
+            return this;
+        }
 
-    public String getName() {
-        return name;
-    }
+        public Builder WithDOB(Date dob) {
+            this.DOB = dob;
+            return this;
+        }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Date getDOB() {
-        return DOB;
-    }
-
-    public void setDOB(Date DOB) {
-        this.DOB = DOB;
+        public User build(){
+            User user = new User();
+            user.id =this.id;
+            user.DOB =this.DOB;
+            user.name =this.name;
+            return user;
+        }
     }
 
     @Override
@@ -44,5 +42,17 @@ public class User {
                 ", name='" + name + '\'' +
                 ", DOB=" + DOB +
                 '}';
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Date getDOB() {
+        return DOB;
     }
 }

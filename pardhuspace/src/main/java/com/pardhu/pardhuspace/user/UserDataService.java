@@ -11,9 +11,9 @@ public class UserDataService {
     private static List<User> users = new ArrayList<>();
 
     static {
-        users.add(new User(1, "ram", new Date()));
-        users.add(new User(2, "ramana", new Date()));
-        users.add(new User(3, "load", new Date()));
+        users.add(new User.Builder(1).WithName("raman").WithDOB(new Date()).build());
+        users.add(new User.Builder(2).WithName("load").WithDOB(new Date()).build());
+        users.add(new User.Builder(3).WithName("athaliraa").WithDOB(new Date()).build());
     }
 
     public List<User> findall() {
