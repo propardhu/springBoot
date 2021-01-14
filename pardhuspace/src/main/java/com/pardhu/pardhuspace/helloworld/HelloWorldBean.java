@@ -15,10 +15,4 @@ public class HelloWorldBean {
         return message;
     }
 
-    @Override
-    public String toString() {
-        return "HelloWorldBean{" +
-                "message='" + message + '\'' +
-                '}';
-    }
 }

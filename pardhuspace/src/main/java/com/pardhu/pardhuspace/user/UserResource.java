@@ -32,9 +32,9 @@ public class UserResource {
     public ResponseEntity<Object> createuser(@RequestBody User user) {
         User saveUser = service.save(user);
         //After Created sending response
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()             //creating URL for response
                 .path("/{id}")
                 .buildAndExpand(saveUser.getId()).toUri();
-        return ResponseEntity.created(location).build();
+        return ResponseEntity.created(location).build();                            //sending response
     }
 }

@@ -26,7 +26,7 @@ public class UserDataService {
     }
 
     public User findOne(int id) {
-        for (User user : users) {
+        for (User user : users) {               //new type of for loop
             if (user.getId() == id) {
                 return user;
             }
